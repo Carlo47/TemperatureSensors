@@ -4,10 +4,7 @@ Author      2023-01-01 Charles Geiser (https://www.dodeka.ch)
 
 Purpose     Reads a DHt22 temperature and humidity sensor connected
             to the supplied pin and provides the methods
-                - getCelsius()      temperature in °C
-                - getFahrenheit()   temperature in °F
-                - getHumidity()     relative humidity in %
-                - getDewpoint()     dew point in °C
+                - getValues()       returns a list of measurements [tC, tF, rH, dP]
                 - printValues()     prints the measured values to the terminal as
                                         tC = 23 °C
                                         tF = 73 °F

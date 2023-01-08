@@ -7,13 +7,14 @@ which returns a list of available measurement values **[tC, tF, rH, dP]**, namel
 temperature in °Celsius and °Fahrenheit, the relative humidity in % and the
 computed dew point in °Celsius.
 
-The DS18B20 temperature sensor only provides the temperature values [tC, tF].
+For a quick function check the method `printValues()` is implemented.
 
-The BME280 sensor also measures local air pressure. The local normal pressure is 
+The **DS18B20** sensor only provides the temperature values **[tC, tF]**.
+
+The **BME280** sensor also measures local air pressure. The local normal pressure is 
 calculated from the specified local altitude in meters above sea level. These 
 two values show the tendency of the air pressure, which allows a weather forecast.
-
-For a quick function check the method `printValues()` is implemented.
+The method getValues() returns the list **[tC, tF, rH, dP, airPres, locNormalPres, locAltitude]**
 
 The `main.py` implements also the method `waitIsOver()`, which is used to periodically query the sensors without blocking the main loop. As an argument, it takes a list which holds the previous ticks and the query period.
 

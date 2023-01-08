@@ -4,8 +4,8 @@ Author      2023-01-04 Charles Geiser (https://www.dodeka.ch)
 
 Purpose     Reads a Sensirion SHT31 temperature and humidity sensor connected
             to the i2c bus and provides the methods
-                - get_values         returns the _values (tC, tF, rH, tD)
-                - print_values()     prints the measured _values to the terminal as
+                - getValues         returns a list of measurements [tC, tF, rH, dP]
+                - printValues()     prints the measured values to the terminal as
                                         tC = 23.2 °C
                                         tF = 73.8 °F
                                         rH = 49.7 %
