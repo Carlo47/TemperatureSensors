@@ -3,7 +3,7 @@ Module      main.py
 Author      2023-01-01 Charles Geiser (https://www.dodeka.ch)
 
 Purpose     Shows the use of the temperature and humidity 
-            sensors DHT11, DHT22, DS18B20 and SH31
+            sensors DHT11, DHT22, DS18B20, SHT31 and BME280
 
 Board       ESP8266
 Firmware    micropython from https://micropython.org
@@ -16,7 +16,7 @@ Wiring      DHT11-Sensor                        DHT22-Sensor
             '-----------'                       |  Vcc  o--> 3.3V
                                                 '-------'  
 
-            DS18B20-Sensor              SHT31-Sensor          BME280-Sensor
+            DS18B20-Sensor              SHT31-Sensor           BME280-Sensor
             .-----------.               .------.               .------.
             |  DATA (1) o--> GPIO0      |  SAA o--> GPIO4      |  Vcc o--> 3.3V 
             |  Vcc  (2) o--> 3.3V       |  SCL o--> GPIO5      |  GND o--> GND
