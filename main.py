@@ -8,21 +8,23 @@ Purpose     Shows the use of the temperature and humidity
 Board       ESP8266
 Firmware    micropython from https://micropython.org
 
-Wiring      DHT11-Sensor Breakout Elegoo            DHT22-Sensor
-            ----.                                   ----.
-                o--- (1) GND  --> GND                   o--- (4) GND  --> GND
-                o--- (2) Vcc  --> 3.3V                  o--- (3) NC
-                o--- (3) DATA --> GPIO12                o--- (2) DATA --> GPIO13
-            ----'                                       o--- (1) Vcc  --> 3.3V
+Wiring      DHT11-Sensor Breakout Elegoo        DHT22-Sensor
+            ----.                               ----.
+                o--- (1) GND  --> GND               o--- (4) GND  --> GND
+                o--- (2) Vcc  --> 3.3V              o--- (3) NC
+                o--- (3) DATA --> GPIO12            o--- (2) DATA --> GPIO13
+            ----'                                   o--- (1) Vcc  --> 3.3V
+                                                ----'  
 
-            DS18B20-Sensor                          SHT31-Sensor
-            ----.                                   ----.
-                o--- (1) DATA --> GPIO0                 o--- SAA --> GPIO4
-                o--- (2) Vcc  --> 3.3V                  o--- SCL --> GPIO5
-                o--- (3) GND  --> GND                   o--- GND --> GND
-            ----'                                       o--- Vcc --> 3.3V
-                                                    ----'
-
+            DS18B20-Sensor                      SHT31-Sensor                 BME280-Sensor
+            ----.                               ----.                        ----.
+                o--- (1) DATA --> GPIO0             o--- SAA --> GPIO4           o--- Vcc ---> 3.3V 
+                o--- (2) Vcc  --> 3.3V              o--- SCL --> GPIO5           o--- GNN ---> GND
+                o--- (3) GND  --> GND               o--- GND --> GND             o--- SCL ---> GPIO5
+            ----'                                   o--- Vcc --> 3.3V            o--- SDA ---> GPIO4
+                                                ----'                            o--- CSB ---> NC 
+                                                                                 o--- SDO ---> NC
+                                                                            ----'
 
                                 USB 
                     .-----------I...I-----------.
