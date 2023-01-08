@@ -12,7 +12,7 @@ Purpose     Reads a DHt11 temperature and humidity sensor connected
                                         tC = 23 °C
                                         tF = 73 °F
                                         rH = 49 %
-                                        dp = 12 °💧
+                                        dP = 12 °💧
 
 Board       ESP8266
 Firmware    micropython from https://micropython.org
@@ -44,5 +44,5 @@ class DHT11Sensor:
     def printValues(self):
         self.getValues()
         #print('tC = %02d °C\ntF = %02d °F\nrH = %02d %%\ndp = %2.0f °💧\n' % (self.tC, self.tF, self.rH, self.dP))
-        print('tC = %4.1f °C\ntF = %4.1f °F\nrH = %4.1f %%\ndp = %4.1f °💧\n' % (self._values[0], self._values[1], self._values[2], self._values[3]))
+        print('tC = %4.1f °C\ntF = %4.1f °F\nrH = %4.1f %%\ndP = %4.1f °💧\n' % (self._values[0], self._values[1], self._values[2], self._values[3]))
     

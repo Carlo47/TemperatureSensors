@@ -9,7 +9,7 @@ Purpose     Reads a Sensirion SHT31 temperature and humidity sensor connected
                                         tC = 23.2 °C
                                         tF = 73.8 °F
                                         rH = 49.7 %
-                                        dp = 12.1 °💧
+                                        dP = 12.1 °💧
 Board       ESP8266
 Firmware    micropython from https://micropython.org
 
@@ -29,11 +29,13 @@ from machine import I2C
 from math import log
 import time
 
+SHT31_I2CADDR = const(0x44)
+
 R_HIGH   = const(1)
 R_MEDIUM = const(2)
 R_LOW    = const(3)
 
-class SHT31Sensor(object):
+class SHT31Sensor:
     _commands = {                   # commands: choose clock stretching true or false and
     	True: {                     #           one of the 3 repeatabilities
             R_HIGH   : b'\x2c\x06',
@@ -51,7 +53,7 @@ class SHT31Sensor(object):
     Initializes a sensor object on the given I2C bus with 
     access via the specified address which defaults to 0x44 = 68
     """
-    def __init__(self, i2c, addr=0x44):
+    def __init__(self, i2c, addr=SHT31_I2CADDR):
         self._i2c = i2c
         self._addr = addr
         self._values = [0,0,0,0]
@@ -91,5 +93,5 @@ class SHT31Sensor(object):
 
     def printValues(self, repeatability=R_HIGH, clockStretch=True):
         self.getValues(repeatability=R_HIGH, clockStretch=True)
-        print('tC = %4.1f °C\ntF = %4.1f °F\nrH = %4.1f %%\ndp = %4.1f °💧\n' % (self._values[0], self._values[1], self._values[2], self._values[3]))
+        print('tC = %4.1f °C\ntF = %4.1f °F\nrH = %4.1f %%\ndP = %4.1f °💧\n' % (self._values[0], self._values[1], self._values[2], self._values[3]))
     
